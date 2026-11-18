@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BRUSHIFY</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    #CONTENT {
+      width: 450px;
+      height: 400px;
+      color: black;
+      border: 2px solid black;
+      margin: 25px;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      cursor: text; 
+      word-break: break-word;
+    }
+    .COLORSCHANGE {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 35px;
+    }
+    .circle {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 1.5px solid black;
+      cursor: pointer;
+    }
+    .fontbutton{
+      padding: 6px 12px;
+      cursor: pointer;
+      border: 1px solid black;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+    <center>
+
+  <h1>BRUSHIFY</h1>
+  <div id="CONTENT" contenteditable="true">Welcome</div>
+
+  <div class="COLORSCHANGE">
+    <div>
+      <h4>Box Color</h4>
+      <button class="circle" style="background-color: #00FF00;" onclick="changeBg('#00FF00')"></button>
+      <button class="circle" style="background-color: #00FFFF;" onclick="changeBg('#00FFFF')"></button>
+      <button class="circle" style="background-color: #FF00FF;" onclick="changeBg('#FF00FF')"></button>
+    </div>
+    <div>
+      <h4>Writing Color</h4>
+      <button class="circle" style="background-color: #00008B;" onclick="changeText('#00008B')"></button>
+      <button class="circle" style="background-color: #800000;" onclick="changeText('#800000')"></button>
+      <button class="circle" style="background-color: black;" onclick="changeText('black')"></button>
+    </div>
+    <div>
+      <h4>Text Style</h4>
+      <button class="fontbutton" onclick="changeFont('Verdana')">Font1</button>
+      <button class="fontbutton" onclick="changeFont('Georgia')">Font2</button>
+    </div>
+  </div>
+  </center>
+
+  <script>
+    var box = document.getElementById("CONTENT");
+
+    function changeBg(colorName) {
+      box.style.backgroundColor = colorName;
+    }
+
+    function changeText(textColor) {
+      box.style.color = textColor;
+    }
+
+    function changeFont(fontName) {
+      box.style.fontFamily = fontName;
+    }
+  </script>
+
+</body>
+</html>
